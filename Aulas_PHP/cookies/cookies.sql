@@ -1,6 +1,8 @@
 CREATE DATABASE cookies;
 use cookies;
 
+show tables;
+
 CREATE TABLE usuarios
 (
 	email varchar(100) NOT NULL,

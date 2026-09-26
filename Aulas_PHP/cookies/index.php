@@ -11,6 +11,8 @@ include "valida_cookies.inc";
 <body>
     Seja bem-vindo ao meu site!!!<br>
     Coloque o conteúdo do seu site aqui neste espaço<br> 
-    <p><a href="logout.php"></a></p>
+    <form action="logout.php" method="post">
+        <button type="submit">Sair</button>
+</form>
 </body>
 </html>

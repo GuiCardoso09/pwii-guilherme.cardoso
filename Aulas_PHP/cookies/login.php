@@ -18,8 +18,9 @@ if($linhas==0) {//testa se a consulta retornou algum registro
     echo "<p align=\"center\"><a href=\"login.html\">Voltar</a></p>";
     echo "</body></html>";
 }
+else
 {
-    $dados = $resultado->fetch-array();
+    $dados = $resultado->fetch_array();
     $senha_banco = $dados["senha"];
 
     if($senha != $senha_banco)//confere senha
@@ -32,7 +33,7 @@ if($linhas==0) {//testa se a consulta retornou algum registro
         else//usuario e senha corretos. Vamos criar os cookies
         {
         setcookie("email_usuario", $email);
-        setcookie("senha_usuario", $senha)
+        setcookie("senha_usuario", $senha);
         //direciona para a pagina inicial dos usuarios cadastrados
         header ("Location: index.php");
         }
