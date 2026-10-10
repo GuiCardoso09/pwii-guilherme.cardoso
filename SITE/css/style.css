@@ -1,0 +1,135 @@
+/*IMPORTAÇÃO DE FONTES EXTERNAS*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+/*REGRAS GERAIS E RESET
+Garante que 'padding' e 'border' não alterem a largura total dos elementos*/
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin:0 auto;
+    font-family: 'Montserrat', sans-serif; /*Open Sans - Padrão para textos corridos*/
+}
+
+/* Tipografia padronizada para todos os títulos*/
+h1,h2, h3, h4, h5, h6 {
+    font-family: 'Yanone Kaffeestz', sans-serif;
+    letter-spacing: 1.5px; /*Espaçamento entre letras*/
+}
+
+/*Tornar as imangens responsivas*/
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/*------------------------------
+    3. CABEÇALHO
+------------------------------*/
+.header {
+    height: 60px;
+}
+
+/*Alinha a logotipo e o botão de menu nas extremidades do cabeçalho*/
+.header, .conteudo {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Container centralizado para limitar largura das seções*/
+.conteudo{
+    margin: auto;
+    width: 99%;
+}
+
+.logo{
+    margin-top: 10px;
+}
+
+.logo, .icon-menu{
+    margin:5px;
+    color: #FFF;
+}
+
+/* Botão de abrir/fechar menu em dispositivos móveis (Hambuguer)*/
+.icon-menu{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background: #FBA919;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+/*======================================================
+    4. NAVEGAÇÃO E MENU RESPONSIVO (OFF CANVAS)
+========================================================*/
+/*Esconde o menu fora da área visível do ecrã no lado esquerdo*/
+.nav{
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    transition:all 0.5s;
+}
+
+.menu{
+list-style: none;
+padding: 0;
+margin:0;
+}
+
+.menu_link{
+    display:block;
+    padding: 15px;
+    background: #FBA919;
+    text-decoration: none;
+    color:#FFF;
+}
+
+/* Estado de foco/hover dos links e página selecionada */
+.menu_link:hover, .select{
+    background: white;
+    color: #FBA919;
+}
+
+/*Classe alternada via JS para exibir o menu em ecrãs pequenos */
+.mostrar{
+    left: 0%;
+}
+
+/*=====================================================
+
+    5. SEÇÃO BANNER(DESTAQUE PRINCIPAL)
+    ===================================================*/
+.banner{
+    margin-top: -60px; /*Coloca o Banner por trás do cabeçalho*/
+    z-index: -100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.banner .conteudo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.banner_titulo {
+    font-size: 25px;
+}
+
+/*Esconde o texto secundário do banner em telemóveis muito pequenos*/
+.banner_txt{
+    display:none;
+}
+/*
